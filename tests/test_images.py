@@ -49,7 +49,7 @@ FONT = next((path for path in (
 def test_real_tesseract_round_trip_accepts_exact_final_png():
     quote = "Every word survives."
     canvas = Image.new("RGB", (1264, 1680), "white")
-    font = ImageFont.truetype(str(FONT), 96)
+    font = ImageFont.truetype(str(FONT), 64)
     ImageDraw.Draw(canvas).text((100, 700), quote, font=font, fill="black")
     source = io.BytesIO()
     canvas.save(source, format="PNG")
