@@ -1,0 +1,15 @@
+.DS_Store
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+var/
+config.toml
+
+.env.*
+!.env.example
+dist/
+build/
+*.egg-info/
+.ruff_cache/

@@ -1,0 +1,44 @@
+[paths]
+state_root = "var"
+system_prompt = "prompts/system.md"
+image_prompt = "prompts/image.md"
+# Optional independent Bowerbird import:
+# bowerbird_events = "/path/to/bowerbird/events"
+
+[generation]
+provider = "openai"
+model = "gpt-image-2"
+api_base = "https://api.openai.com/v1"
+api_key_env = "OPENAI_API_KEY"
+size = "1024x1536"
+quality = "high"
+ocr_languages = "eng"
+# For Cyrillic and English together, install Russian data and use "eng+rus".
+# For xAI, set provider="xai", model="grok-imagine-image-quality",
+# api_base="https://api.x.ai/v1", api_key_env="XAI_API_KEY".
+width = 1264
+height = 1680
+publish_target = 5
+max_api_calls_per_run = 5
+max_attempts_per_highlight = 3
+# Latest workflow: 0 means no length filter; long quotes may fail OCR.
+# Legacy experiment/generate_batch still uses 0 as an experiment gate.
+character_limit = 0
+experiment_lengths = [80, 140, 220, 320]
+experiment_samples_per_bucket = 5
+experiment_min_pass_rate = 0.8
+experiment_max_api_calls = 60
+
+[rotation]
+active_size = 96
+new_image_days = 7
+
+[relay]
+host = "127.0.0.1"
+port = 8788
+max_body_bytes = 5000000
+
+[device]
+poll_seconds = 300
+ko_screensaver_dir = "/mnt/us/highlight-art/screensavers"
+stock_screensaver_dir = "/mnt/us/linkss/screensavers"
